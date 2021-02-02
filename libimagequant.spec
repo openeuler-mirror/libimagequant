@@ -1,12 +1,13 @@
 Name:           libimagequant
-Version:        2.12.5
-Release:        2
+Version:        2.14.0
+Release:        1
 Summary:        Palette quantization library
 License:        GPLv3+ and MIT
 URL:            https://github.com/ImageOptim/libimagequant
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 Patch0000:      libimagequant_solibperm.patch
+Patch0001:      libimagequant_omp.patch
 
 %description
 The portable C library can convert RGBA images into
@@ -45,6 +46,9 @@ rm -f %{buildroot}%{_libdir}/%{name}.a
 %{_libdir}/pkgconfig/imagequant.pc
 
 %changelog
+* Tue Feb 02 2021 zhanzhimin <zhanzhimin@huawei.com> - 2.14.0-1
+- update to 2.14.0
+
 * Thu Nov 14 2019 wangye<wangye54@huawei.com> - 2.12.5-2
 - Package init
 

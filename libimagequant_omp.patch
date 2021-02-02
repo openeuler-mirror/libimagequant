@@ -1,0 +1,21 @@
+diff -rupN libimagequant-2.14.0/libimagequant.c libimagequant-2.14.0-new/libimagequant.c
+---
+ libimagequant.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libimagequant.c b/libimagequant.c
+index 4f0b48f..047c042 100644
+--- a/libimagequant.c
++++ b/libimagequant.c
+@@ -1279,7 +1279,7 @@ LIQ_NONNULL static float remap_to_palette(liq_image *const input_image, unsigned
+ 
+ #if __GNUC__ >= 9 || __clang__
+     #pragma omp parallel for if (rows*cols > 3000) \
+-        schedule(static) default(none) shared(acolormap,average_color,cols,input_image,map,n,output_pixels,rows,transparent_index) reduction(+:remapping_error)
++        schedule(static) default(none) shared(acolormap,average_color,cols,input_image,map,n,output_pixels,rows,transparent_index,background) reduction(+:remapping_error)
+ #else
+     #pragma omp parallel for if (rows*cols > 3000) \
+         schedule(static) default(none) shared(acolormap) shared(average_color) reduction(+:remapping_error)
+-- 
+2.23.0
+
