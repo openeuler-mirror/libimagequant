@@ -1,12 +1,10 @@
 Name:           libimagequant
-Version:        2.15.1
+Version:        2.17.0
 Release:        1
 Summary:        Palette quantization library
 License:        GPLv3+ and MIT
 URL:            https://github.com/ImageOptim/libimagequant
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
-
-Patch0000:      libimagequant_solibperm.patch
 
 BuildRequires:  gcc
 
@@ -47,6 +45,9 @@ rm -f %{buildroot}%{_libdir}/%{name}.a
 %{_libdir}/pkgconfig/imagequant.pc
 
 %changelog
+* Fri Aug 05 2022 tianlijing <tianlijing@kylinos.cn> - 2.17.0-1
+- update to 2.17.0
+
 * Fri Dec 03 2021 xingxing <xingxing9@huawei.com> - 2.15.1-1
 - update to 2.15.1
 
