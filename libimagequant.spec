@@ -1,5 +1,5 @@
 Name:           libimagequant
-Version:        2.17.0
+Version:        2.18.0
 Release:        1
 Summary:        Palette quantization library
 License:        GPLv3+ and MIT
@@ -45,6 +45,9 @@ rm -f %{buildroot}%{_libdir}/%{name}.a
 %{_libdir}/pkgconfig/imagequant.pc
 
 %changelog
+* Wed Apr 12 2023 liyanan <thistleslyn@163.com> - 2.18.0-1
+- Update to 2.18.0
+
 * Fri Aug 05 2022 tianlijing <tianlijing@kylinos.cn> - 2.17.0-1
 - update to 2.17.0
 
