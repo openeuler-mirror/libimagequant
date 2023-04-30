@@ -1,6 +1,6 @@
 Name:           libimagequant
 Version:        2.17.0
-Release:        1
+Release:        2
 Summary:        Palette quantization library
 License:        GPLv3+ and MIT
 URL:            https://github.com/ImageOptim/libimagequant
@@ -24,7 +24,11 @@ and header files for the application.
 %autosetup -p1
 
 %build
-%configure --with-openmp
+%if "%toolchain" == "clang"
+	%configure
+%else 
+	%configure --with-openmp
+%endif
 %make_build
 
 %install
@@ -45,6 +49,9 @@ rm -f %{buildroot}%{_libdir}/%{name}.a
 %{_libdir}/pkgconfig/imagequant.pc
 
 %changelog
+* Sun Apr 30 2023 yoo <sunyuechi@iscas.ac.cn> - 2.17.0-2
+- fix clang not support openmp
+
 * Fri Aug 05 2022 tianlijing <tianlijing@kylinos.cn> - 2.17.0-1
 - update to 2.17.0
 
